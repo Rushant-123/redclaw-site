@@ -103,7 +103,7 @@ function CrabParticles({ texture }: { texture: THREE.CanvasTexture | null }) {
       map: texture,
       size: 0.32,
       transparent: true,
-      opacity: 0.42,
+      opacity: 0.21,
       sizeAttenuation: true,
       depthWrite: false,
       alphaTest: 0.01,
