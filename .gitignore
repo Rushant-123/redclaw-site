@@ -42,3 +42,4 @@ next-env.d.ts
 public/hero-original.mp4
 public/crab-frame.jpg
 TASK.md
+.env*.local
