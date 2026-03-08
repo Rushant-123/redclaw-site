@@ -226,7 +226,7 @@ export default function Home() {
       <VideoIntro onDone={() => setIntroDone(true)} />
 
       {/* NAV */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 md:px-8 py-4 md:py-5">
         <div className="flex items-center gap-2.5">
           <svg viewBox="0 0 28 32" className="h-6 w-5" fill="none">
             <path d="M6 2C7 10 4 20 7 30" stroke="#C41E3A" strokeWidth="3.5" strokeLinecap="round"/>
@@ -284,7 +284,7 @@ export default function Home() {
             initial={{ opacity: 0, y: -10 }}
             animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
             transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-            className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/[0.06] px-4 py-1.5"
+            className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/[0.06] px-4 py-1.5 max-w-[90vw] text-center"
           >
             <Zap className="h-3 w-3 flex-shrink-0 text-[#E8344F]" />
             <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#E8344F]">
@@ -298,7 +298,7 @@ export default function Home() {
             animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="font-black leading-[0.88] tracking-tighter text-white"
-            style={{ fontSize: "clamp(64px, 12vw, 176px)", fontFamily: "var(--font-syne)" }}
+            style={{ fontSize: "clamp(44px, 11vw, 176px)", fontFamily: "var(--font-syne)" }}
           >
             RedClaw
           </motion.h1>
@@ -310,7 +310,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.35, ease: "easeOut" }}
             className="mt-2 font-bold tracking-tight"
             style={{
-              fontSize: "clamp(16px, 2.8vw, 38px)",
+              fontSize: "clamp(15px, 4vw, 38px)",
               fontFamily: "var(--font-syne)",
               background: "linear-gradient(90deg, #7B0F1F 0%, #C41E3A 25%, #E8344F 45%, #FF7090 55%, #E8344F 75%, #C41E3A 85%, #7B0F1F 100%)",
               backgroundSize: "250% auto",
@@ -392,7 +392,7 @@ export default function Home() {
       </section>
 
       {/* ══ 2. THE FLYWHEEL ════════════════════════════════ */}
-      <section id="flywheel" className="px-8 py-28 md:px-16 lg:px-24">
+      <section id="flywheel" className="px-5 py-16 md:px-16 md:py-28 lg:px-24">
         <div className="mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -401,11 +401,11 @@ export default function Home() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="text-[10px] uppercase tracking-[0.2em] text-[#C41E3A] font-semibold mb-3">The flywheel</p>
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-tight max-w-3xl">
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight max-w-3xl">
               The 1,000,001st red claw<br />
               <span className="text-white/30">will be 1,000,000x stronger than the 1st.</span>
             </h2>
-            <p className="text-white/35 text-base max-w-xl leading-relaxed mb-16">
+            <p className="text-white/35 text-base max-w-xl leading-relaxed mb-10 md:mb-16">
               Every setup we do adds to a shared library of skills, harnesses, and workflows.
               Every new client inherits everything we've learned from every client before them.
               The later you join, the more powerful your starting point.
@@ -473,7 +473,7 @@ export default function Home() {
       <div className="mx-8 md:mx-16 lg:mx-24 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/15 to-transparent" />
 
       {/* ══ 3. WHO GETS ONE ════════════════════════════════ */}
-      <section className="px-8 py-28 md:px-16 lg:px-24">
+      <section className="px-5 py-16 md:px-16 md:py-28 lg:px-24">
         <div className="mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -482,10 +482,10 @@ export default function Home() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="text-[10px] uppercase tracking-[0.2em] text-[#C41E3A] font-semibold mb-3">The roster</p>
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-5 leading-[0.9]">
+            <h2 className="text-4xl md:text-7xl font-bold tracking-tight mb-5 leading-[0.9]">
               Not for everyone.
             </h2>
-            <p className="text-white/35 text-base max-w-xl leading-relaxed mb-16">
+            <p className="text-white/35 text-base max-w-xl leading-relaxed mb-10 md:mb-16">
               We work with the most cracked people and teams on the planet.
               Fast-growing startups. Enterprise teams with the top designers, writers, engineers.
               Founders and influencers who operate at a different level.
@@ -536,7 +536,7 @@ export default function Home() {
       </section>
 
       {/* ══ 4. SKILLS SHOWCASE ════════════════════════════ */}
-      <section id="skills" className="px-8 py-28 md:px-16 lg:px-24 bg-[#060606] section-alt">
+      <section id="skills" className="px-5 py-16 md:px-16 md:py-28 lg:px-24 bg-[#060606] section-alt">
         <div className="mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -545,11 +545,11 @@ export default function Home() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="text-[10px] uppercase tracking-[0.2em] text-[#C41E3A] font-semibold mb-3">The library</p>
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-5 leading-[1.05]">
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5 leading-[1.05]">
               Skills that make your<br />
               <span className="text-white/30">claw legendary.</span>
             </h2>
-            <p className="text-white/35 text-base max-w-xl leading-relaxed mb-16">
+            <p className="text-white/35 text-base max-w-xl leading-relaxed mb-10 md:mb-16">
               Every red claw we've set up has contributed to this library. These aren't templates — they're battle-tested capabilities built from real use cases across every client we've served.
             </p>
           </motion.div>
@@ -586,7 +586,7 @@ export default function Home() {
       </section>
 
       {/* ══ 5. USE CASES LEADERBOARD ══════════════════════ */}
-      <section id="leaderboard" className="px-8 py-28 md:px-16 lg:px-24">
+      <section id="leaderboard" className="px-5 py-16 md:px-16 md:py-28 lg:px-24">
         <div className="mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -595,7 +595,7 @@ export default function Home() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="text-[10px] uppercase tracking-[0.2em] text-[#C41E3A] font-semibold mb-3">Use cases</p>
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-5 leading-tight">
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5 leading-tight">
               What red claws<br />
               <span className="text-white/30">are actually doing.</span>
             </h2>
@@ -641,12 +641,12 @@ export default function Home() {
       </section>
 
       {/* ══ 6. MISSION ════════════════════════════════════ */}
-      <section className="px-8 py-40 md:px-16 text-center relative overflow-hidden bg-[#060606]">
+      <section className="px-5 py-20 md:px-16 md:py-40 text-center relative overflow-hidden bg-[#060606]">
         <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse 90% 70% at 50% 50%, rgba(196,30,58,0.06), transparent)" }} />
         <BlurFade delay={0.1} inView className="relative mx-auto max-w-5xl">
           <h2
             className="font-black leading-none tracking-tighter"
-            style={{ fontSize: "clamp(56px, 11vw, 150px)", fontFamily: "var(--font-syne)" }}
+            style={{ fontSize: "clamp(38px, 10vw, 150px)", fontFamily: "var(--font-syne)" }}
           >
             A million<br />
             <FlipWords
@@ -663,7 +663,7 @@ export default function Home() {
       </section>
 
       {/* ══ 7. CTA + FORM ════════════════════════════════ */}
-      <section id="cta" className="relative px-6 py-28 md:px-16 overflow-hidden">
+      <section id="cta" className="relative px-5 py-16 md:px-16 md:py-28 overflow-hidden">
         <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[60%]" style={{ background: "radial-gradient(ellipse 100% 80% at 50% 100%, rgba(196,30,58,0.14), transparent)" }} />
         <div className="relative mx-auto max-w-2xl">
           <motion.div
@@ -676,7 +676,7 @@ export default function Home() {
             <p className="text-[10px] uppercase tracking-[0.2em] text-[#C41E3A] font-semibold mb-4">Apply</p>
             <h2
               className="font-black tracking-tight leading-[0.9] mb-5"
-              style={{ fontSize: "clamp(44px, 8vw, 96px)", fontFamily: "var(--font-syne)" }}
+              style={{ fontSize: "clamp(34px, 8vw, 96px)", fontFamily: "var(--font-syne)" }}
             >
               Are you cracked<br />enough?
             </h2>
@@ -698,7 +698,7 @@ export default function Home() {
       </section>
 
       {/* ══ FOOTER ════════════════════════════════════════ */}
-      <footer className="border-t border-white/[0.04] px-8 py-7 md:px-16">
+      <footer className="border-t border-white/[0.04] px-5 py-6 md:px-16">
         <div className="mx-auto max-w-6xl flex items-center justify-between flex-wrap gap-4">
           <div className="flex items-center gap-3">
             <svg viewBox="0 0 28 32" className="h-4 w-4" fill="none">
