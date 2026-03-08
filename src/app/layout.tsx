@@ -15,9 +15,29 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "RedClaw — A million superclaws",
+  title: "RedClaw — A million red claws",
   description:
-    "AI agents for teams that move fast. Custom-built agent stacks for YC startups and enterprise teams.",
+    "OpenClaw setup for the most cracked teams on earth. Custom-built agent stacks for YC startups, enterprises, and the builders who refuse to move slow.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/favicon-180.png",
+  },
+  openGraph: {
+    title: "RedClaw — A million red claws",
+    description: "OpenClaw setup for the most cracked teams on earth.",
+    url: "https://redclaw.co",
+    siteName: "RedClaw",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RedClaw — A million red claws",
+    description: "OpenClaw setup for the most cracked teams on earth.",
+  },
 };
 
 export default function RootLayout({
