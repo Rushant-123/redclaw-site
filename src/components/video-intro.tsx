@@ -57,7 +57,8 @@ export function VideoIntro({ onDone }: { onDone: () => void }) {
           initial={{ opacity: 1 }}
           animate={{ opacity: fading ? 0 : 1 }}
           transition={{ duration: 1.0, ease: "easeInOut" }}
-          className="fixed inset-0 z-[100] bg-black flex items-center justify-center"
+          className="fixed inset-0 z-[100] bg-black flex items-center justify-center overflow-hidden"
+          style={{ width: "100vw", height: "100dvh" }}
         >
           <video
             ref={videoRef}
@@ -65,7 +66,7 @@ export function VideoIntro({ onDone }: { onDone: () => void }) {
             muted
             playsInline
             autoPlay
-            className="h-full w-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
           />
 
           {/* Vignette */}
@@ -83,7 +84,8 @@ export function VideoIntro({ onDone }: { onDone: () => void }) {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.35 }}
                 onClick={unmute}
-                className="absolute inset-0 flex flex-col items-center justify-end pb-24 w-full cursor-pointer"
+                className="absolute inset-0 flex flex-col items-center justify-end w-full cursor-pointer"
+                style={{ paddingBottom: "max(6rem, env(safe-area-inset-bottom) + 2rem)" }}
               >
                 <div className="flex items-center gap-3 rounded-full border border-white/20 bg-black/50 backdrop-blur-sm px-6 py-3 hover:border-white/40 hover:bg-black/70 transition-all duration-200">
                   <VolumeX className="h-4 w-4 text-white/60" />
@@ -99,7 +101,8 @@ export function VideoIntro({ onDone }: { onDone: () => void }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               onClick={toggleMute}
-              className="absolute bottom-8 left-8 flex items-center gap-2 text-xs text-white/40 hover:text-white/70 transition-colors uppercase tracking-widest font-medium"
+              className="absolute left-6 flex items-center gap-2 text-xs text-white/40 hover:text-white/70 transition-colors uppercase tracking-widest font-medium"
+            style={{ bottom: "max(2rem, env(safe-area-inset-bottom) + 0.75rem)" }}
             >
               <Volume2 className="h-3.5 w-3.5" />
               <span>Sound on</span>
@@ -115,7 +118,8 @@ export function VideoIntro({ onDone }: { onDone: () => void }) {
               setFading(true);
               setTimeout(() => { setVisible(false); onDone(); }, 1000);
             }}
-            className="absolute bottom-8 right-8 text-xs text-white/30 hover:text-white/60 transition-colors tracking-widest uppercase font-medium"
+            className="absolute right-6 text-xs text-white/30 hover:text-white/60 transition-colors tracking-widest uppercase font-medium"
+            style={{ bottom: "max(2rem, env(safe-area-inset-bottom) + 0.75rem)" }}
           >
             Skip →
           </motion.button>
