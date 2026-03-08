@@ -66,7 +66,7 @@ export function VideoIntro({ onDone }: { onDone: () => void }) {
             muted
             playsInline
             autoPlay
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-contain md:object-cover"
           />
 
           {/* Vignette */}
