@@ -640,6 +640,81 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ══ 5.5 SECURITY ══════════════════════════════════ */}
+      <section className="px-5 py-16 md:px-16 md:py-28 bg-[#060606] section-alt">
+        <div className="mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <p className="text-[10px] uppercase tracking-[0.2em] text-[#C41E3A] font-semibold mb-3">Security</p>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5 leading-tight max-w-2xl">
+              As secure as you<br />
+              <span className="text-white/30">want it to be.</span>
+            </h2>
+            <p className="text-white/35 text-base max-w-xl leading-relaxed mb-14">
+              Security is not one-size-fits-all. We set it up to match what you actually need.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                level: "01",
+                title: "Fully local",
+                desc: "No outside connection. The agent runs entirely on your infrastructure. Nothing leaves your network. Built for enterprises where data sovereignty is non-negotiable.",
+                tag: "Enterprise",
+                tagColor: "text-blue-400/70",
+              },
+              {
+                level: "02",
+                title: "Private cloud",
+                desc: "Deployed to a specific IP you control. Outbound connections to a fixed allowlist only. You know exactly what the agent can touch and what it cannot.",
+                tag: "Mid-market",
+                tagColor: "text-purple-400/70",
+              },
+              {
+                level: "03",
+                title: "Fully autonomous",
+                desc: "The agent acts on its own, as fast as possible. No restrictions. For teams that move fast and trust their setup. This is the default for most of our startups.",
+                tag: "Startups",
+                tagColor: "text-[#C41E3A]/70",
+              },
+            ].map((tier, i) => (
+              <motion.div
+                key={tier.level}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                className="relative rounded-2xl border border-white/[0.06] bg-white/[0.02] p-7 md:p-8 min-h-[240px] flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="text-[10px] font-black text-white/10 tracking-[0.2em]">{tier.level}</span>
+                    <span className={`text-[10px] font-semibold uppercase tracking-[0.15em] ${tier.tagColor}`}>{tier.tag}</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-3 tracking-tight">{tier.title}</h3>
+                  <p className="text-sm text-white/30 leading-relaxed">{tier.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-10 text-sm text-white/20 max-w-lg"
+          >
+            Most setups go live in 2 to 3 hours. Not days.
+          </motion.p>
+        </div>
+      </section>
+
       {/* ══ 6. MISSION ════════════════════════════════════ */}
       <section className="px-5 py-20 md:px-16 md:py-40 text-center relative overflow-hidden bg-[#060606]">
         <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse 90% 70% at 50% 50%, rgba(196,30,58,0.06), transparent)" }} />
