@@ -458,7 +458,7 @@ export default function Home() {
                   Each claw we set up<br />makes the next one stronger.
                 </h3>
                 <p className="text-sm text-white/30 leading-relaxed max-w-sm">
-                  It's not just skills — it's pattern recognition, failure learnings, edge cases, and domain expertise accumulated across every deployment we've ever done.
+                  It's not just skills. It's pattern recognition, failure learnings, edge cases, and domain expertise accumulated across every deployment we've ever done.
                 </p>
               </div>
               <div className="flex-1">
@@ -550,7 +550,7 @@ export default function Home() {
               <span className="text-white/30">claw legendary.</span>
             </h2>
             <p className="text-white/35 text-base max-w-xl leading-relaxed mb-10 md:mb-16">
-              Every red claw we've set up has contributed to this library. These aren't templates — they're battle-tested capabilities built from real use cases across every client we've served.
+              Every red claw we've set up has contributed to this library. These aren't templates. They're battle-tested capabilities built from real use cases across every client we've served.
             </p>
           </motion.div>
 
