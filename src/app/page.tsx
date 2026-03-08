@@ -585,6 +585,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ══ 5. PROOF IN THE WILD ══════════════════════════ */}
+      <section className="px-5 py-16 md:px-16 md:py-28 overflow-hidden">
+        <div className="mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-16"
+          >
+            <p className="text-[10px] uppercase tracking-[0.2em] text-[#C41E3A] font-semibold mb-3">In the wild</p>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+              Real teams.<br />
+              <span className="text-white/30">Real Slack.</span>
+            </h2>
+          </motion.div>
+
+          <div className="relative flex flex-col md:flex-row items-start justify-center gap-8 md:gap-6 md:items-center">
+            {[
+              { src: "/proof/proof-1.png", rotate: "-2deg", y: "0px", delay: 0, label: "Saksham, Oximy" },
+              { src: "/proof/proof-3.png", rotate: "1.5deg", y: "40px", delay: 0.1, label: "Naman, Cardboard" },
+              { src: "/proof/proof-2.png", rotate: "-1deg", y: "20px", delay: 0.2, label: "Ishan, client team" },
+            ].map((card, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95, rotate: 0 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: card.rotate }}
+                whileHover={{ rotate: "0deg", scale: 1.03, zIndex: 10 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: card.delay, ease: [0.16, 1, 0.3, 1] }}
+                style={{ translateY: card.y }}
+                className="relative group cursor-pointer flex-shrink-0 w-full md:w-[340px]"
+              >
+                {/* glow bloom */}
+                <div className="absolute inset-0 rounded-2xl blur-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-500"
+                  style={{ background: "radial-gradient(ellipse at center, rgba(196,30,58,0.4), transparent 70%)" }} />
+                {/* card */}
+                <div className="relative rounded-2xl overflow-hidden border border-white/[0.08] shadow-[0_24px_60px_rgba(0,0,0,0.6)]">
+                  <img
+                    src={card.src}
+                    alt={card.label}
+                    className="w-full h-auto block"
+                    style={{ maxHeight: "320px", objectFit: "cover", objectPosition: "top" }}
+                  />
+                </div>
+                <p className="mt-3 text-center text-[11px] text-white/20 tracking-wide">{card.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ══ 5. USE CASES LEADERBOARD ══════════════════════ */}
       <section id="leaderboard" className="px-5 py-16 md:px-16 md:py-28 lg:px-24">
         <div className="mx-auto max-w-4xl">
