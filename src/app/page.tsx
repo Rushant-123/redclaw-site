@@ -585,6 +585,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ══ 5. TESTIMONIALS ═══════════════════════════════ */}
+      <section className="px-5 py-16 md:px-16 md:py-28 bg-[#060606] section-alt overflow-hidden">
+        <div className="mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-12"
+          >
+            <p className="text-[10px] uppercase tracking-[0.2em] text-[#C41E3A] font-semibold mb-3">What people say</p>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight max-w-2xl">
+              Real people.<br />
+              <span className="text-white/30">Real reactions.</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            {[
+              {
+                quote: "woah this is crazy, ily",
+                name: "Saksham",
+                context: "After first week with their red claw",
+                delay: 0,
+              },
+              {
+                quote: "damn. you motivated me. now my weekend will go on this instead of tennis.",
+                name: "Vinay",
+                context: "After the live demo",
+                delay: 0.08,
+              },
+              {
+                quote: "Fantastic session. The demo with the agent filling job applications live was something else.",
+                name: "Deeps",
+                context: "Post-demo WhatsApp",
+                delay: 0.16,
+              },
+              {
+                quote: "You mentioned the GitHub repo where you have skills. Would love to see that when it's ready.",
+                name: "Aswin, Disbug.io",
+                context: "After the live demo",
+                delay: 0.24,
+              },
+            ].map((t, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: t.delay, ease: "easeOut" }}
+                className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-7 md:p-8 flex flex-col gap-5"
+              >
+                <p className="text-base md:text-lg text-white/80 leading-relaxed font-medium">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div>
+                  <p className="text-sm font-semibold text-white/60">{t.name}</p>
+                  <p className="text-xs text-white/25 mt-0.5">{t.context}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ══ 5. USE CASES LEADERBOARD ══════════════════════ */}
       <section id="leaderboard" className="px-5 py-16 md:px-16 md:py-28 lg:px-24">
         <div className="mx-auto max-w-4xl">
